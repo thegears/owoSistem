@@ -1,7 +1,7 @@
+import config from './config.json' assert {type: 'json'};
 import prompt from 'prompt';
 import ora from "ora";
 import Discord from "discord.js";
-import config from "./config.json";
 const client = new Discord.Client();
 
 prompt.start();

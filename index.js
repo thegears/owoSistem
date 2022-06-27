@@ -78,7 +78,7 @@ const startSystem = async (kanal) => {
 
     inter3 = setInterval(() => {
         kanal.send("/bump");
-    }, 1000 * 60 * 60 2);
+    }, 1000 * 60 * 60 * 2);
 };
 
 const stopSystem = async (kanal) => {

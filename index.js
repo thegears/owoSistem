@@ -6,7 +6,7 @@ import Discord from "discord.js";
 const client = new Discord.Client();
 
 prompt.start();
-var inter;
+var inter,inter2,inter3;
 
 const getToken = async () => {
     let token;
@@ -72,6 +72,14 @@ const startSystem = async (kanal) => {
         kanal.send("wh");
         kanal.send("wb");
     }, 15000);
+
+    inter2 = setInterval(() => {
+        kanal.send("owo pray");
+    }, 1000 * 60 * 5);
+
+    inter3 = setInterval(() => {
+        kanal.send("/bump");
+    }, 1000 * 60 * 60 2);
 };
 
 const stopSystem = async (kanal) => {
@@ -79,6 +87,8 @@ const stopSystem = async (kanal) => {
     console.log("Sistem durdu. Doğrulama isteniyor...");
 
     clearInterval(inter);
+    clearInterval(inter2);
+    clearInterval(inter3);
 
     prompt.get(['Doğrulamayı onayladıktan sonra enterlayın']).then(a => {
         startSystem(kanal);

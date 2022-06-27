@@ -1,5 +1,4 @@
-import config from './config.json'
-assert { type: 'json' };
+import config from './config.json' assert { type: 'json' };
 import prompt from 'prompt';
 import ora from "ora";
 import Discord from "discord.js";

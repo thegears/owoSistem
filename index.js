@@ -2,14 +2,19 @@ import prompt from 'prompt';
 import ora from "ora";
 import Discord from "discord.js";
 const client = new Discord.Client();
+const config = require("./config.json");
 
 prompt.start();
 var inter;
 
 const getToken = async () => {
-    let {
-        token
-    } = await prompt.get(['token']);
+    let token;
+
+    if (config.token) token = config.token;
+    else {
+        let ptoken = await prompt.get(['token']);
+        token = ptoken.token;
+    };
 
     token = token.replaceAll(" ", "");
 
@@ -26,9 +31,13 @@ const getToken = async () => {
 };
 
 const getChannel = async () => {
-    let {
-        kanal
-    } = await prompt.get(['kanal']);
+    let kanal;
+
+    if (config.kanal) kanal = config.kanal;
+    else {
+        let pkanal = await prompt.get(['kanal']);
+        kanal = pkanal.kanal;
+    };
 
     kanal = kanal.replaceAll(" ", "");
 

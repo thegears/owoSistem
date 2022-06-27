@@ -1,4 +1,5 @@
-import config from './config.json' assert {type: 'json'};
+import config from './config.json'
+assert { type: 'json' };
 import prompt from 'prompt';
 import ora from "ora";
 import Discord from "discord.js";
@@ -48,7 +49,7 @@ const getChannel = async () => {
         await spinner.stop();
         await startSystem(kanal);
         await client.on("message", message => {
-            if (message.author.id == "408785106942164992") {
+            if (message.channel.id == kanal.id && message.author.id == "408785106942164992") {
                 let msg = message.content.toLowerCase();
                 if (msg.includes("beep") || msg.includes("boop") || msg.includes("real") || msg.includes("check") || msg.includes("complete")) {
                     stopSystem(kanal);
@@ -79,9 +80,9 @@ const stopSystem = async (kanal) => {
 
     clearInterval(inter);
 
-    await prompt.get(['Doğrulamayı onayladıktan sonra enterlayın']);
-
-    startSystem(kanal);
+    prompt.get(['Doğrulamayı onayladıktan sonra enterlayın']).then(a => {
+        startSystem(kanal);
+    });
 };
 
 getToken();

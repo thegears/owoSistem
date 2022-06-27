@@ -1,8 +1,8 @@
 import prompt from 'prompt';
 import ora from "ora";
 import Discord from "discord.js";
+import config from "./config.json";
 const client = new Discord.Client();
-const config = require("./config.json");
 
 prompt.start();
 var inter;

@@ -10,4 +10,4 @@ OwO'da gelişmek için bir sistem.
 
 ## Star atmayı unutmayın :)
 
-## [Buraya tıklayarak kodlar paylaştığım sunucuya gidebilirsiniz.](https://discord.gg/Pur3RnGua2)
+## [Buraya tıklayarak kodlar paylaştığım sunucuya gidebilirsiniz.](https://gearscode.xyz/discord)
